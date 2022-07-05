@@ -21,8 +21,14 @@
 //thank you🦄
 //════════════════════════════//
 
-const fs = require("fs")
 const chalk = require("chalk")
+const { Sequelize } = require('sequelize');
+const fs = require('fs');
+if (fs.existsSync('config.env')) require('dotenv').config({ path: './config.env' });
+function convertToBool(text, fault = 'true') {
+    return text === fault ? true : false;
+}
+
 
 //aumto functioner
 global.autoTyping = false //auto tying in gc (true to on, false to off)
@@ -60,6 +66,7 @@ global.ownernummenu = ['ur number'] //ur owner number in menu and all
 global.watermark = "Xeon Bot Inc." //ur watermark
 global.botscript = "https://github.com/DGXeon/CheemsBot-MD3"
 global.linkz1 = "https://chat.whatsapp.com/HYj9wu5Jrv6CROxyeQbHoS"
+global.linkz1= process.env.linkz1 === undefined ? 'https://telegra.ph/file/35883180004518cb15fe9.jpg' : process.env.linkz1,
 global.linkz2 = "https://chat.whatsapp.com/EcycNbJFCVT5ZsG9xIGkqd"
 
 //Bot theme media
